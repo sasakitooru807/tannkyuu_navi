@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { ResearchNote } from '../types';
+import { ResearchNote } from '../types.ts';
 
 interface NotebookProps {
   notes: ResearchNote[];

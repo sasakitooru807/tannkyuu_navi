@@ -1,9 +1,9 @@
 
 import React, { useState, useEffect, useRef } from 'react';
-import { GeminiService } from './services/geminiService';
-import { Message, ResearchNote, ResearchProject } from './types';
-import ChatBubble from './components/ChatBubble';
-import Notebook from './components/Notebook';
+import { GeminiService } from './services/geminiService.ts';
+import { Message, ResearchNote, ResearchProject } from './types.ts';
+import ChatBubble from './components/ChatBubble.tsx';
+import Notebook from './components/Notebook.tsx';
 
 const App: React.FC = () => {
   const [project, setProject] = useState<ResearchProject>({
@@ -105,7 +105,6 @@ const App: React.FC = () => {
 
   const resetProject = () => {
     if (window.confirm("これまでのしらべ学習のきろくをけして、新しく始める？")) {
-      // Added explicit type to initialProject to fix role inference issue (line 122 error)
       const initialProject: ResearchProject = {
         id: 'default',
         goal: '',
